@@ -3,5 +3,10 @@
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "start": "node src/app/server.js", 
+    "build": "echo 'No build step defined'",  
+    "vercel-build": "echo 'Running build step for Vercel'"
   }
 }
