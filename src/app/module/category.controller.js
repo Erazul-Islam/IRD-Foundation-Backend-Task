@@ -1,9 +1,26 @@
-const { getAllCategories, getCategoryById } = require('./category.service');
+const { getAllCategories, getCategoryById,getAllSubCategories,getDua } = require('./category.service');
 
 
 const fetchAllCategories = async (req, res) => {
     try {
         const categories = await getAllCategories();
+        res.status(200).json(categories);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+const fetchAllSubCategories = async (req, res) => {
+    try {
+        const categories = await getAllSubCategories();
+        res.status(200).json(categories);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+const fetchAllDua = async (req, res) => {
+    try {
+        const categories = await getDua();
         res.status(200).json(categories);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -28,4 +45,6 @@ const fetchCategoryById = async (req, res) => {
 module.exports = {
     fetchAllCategories,
     fetchCategoryById,
+    fetchAllSubCategories,
+    fetchAllDua
 };

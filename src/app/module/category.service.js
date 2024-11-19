@@ -28,7 +28,7 @@ const getAllSubCategories = () => {
 
 const getDua = () => {
     return new Promise((resolve, reject) => {
-        const query = 'SELECT * FROM sub_category';
+        const query = 'SELECT * FROM dua';
         db.all(query, [], (err, rows) => {
             if (err) {
                 reject(err);
@@ -56,4 +56,6 @@ const getCategoryById = (id) => {
 module.exports = {
     getAllCategories,
     getCategoryById,
+    getAllSubCategories,
+    getDua
 };
